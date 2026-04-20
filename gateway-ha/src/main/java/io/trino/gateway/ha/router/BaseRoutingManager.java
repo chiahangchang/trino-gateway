@@ -167,6 +167,13 @@ public abstract class BaseRoutingManager
     }
 
     @Override
+    public void removeBackEndHealth(String backendId)
+    {
+        log.info("Removing backend %s from health tracking", backendId);
+        backendToStatus.remove(backendId);
+    }
+
+    @Override
     public void updateClusterStats(List<ClusterStats> stats)
     {
         for (ClusterStats clusterStats : stats) {

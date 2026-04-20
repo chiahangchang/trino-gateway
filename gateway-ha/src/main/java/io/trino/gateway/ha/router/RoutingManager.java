@@ -30,6 +30,13 @@ public interface RoutingManager
     void updateBackEndHealth(String backendId, TrinoStatus value);
 
     /**
+     * Removes a backend cluster from health tracking entirely.
+     *
+     * @param backendId the unique identifier of the backend cluster to remove
+     */
+    void removeBackEndHealth(String backendId);
+
+    /**
      * Updates the statistics for all backend clusters.
      *
      * @param stats a list of ClusterStats objects representing the current state of each backend cluster
